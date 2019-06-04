@@ -30,6 +30,28 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
+                    <div class="search-container">
+
+
+            <form method="get"  action="search/">
+                {% csrf_token %}
+              <input id="q" name="q" type="text" placeholder="your search...">
+
+            </form>
+
+            {% for item in posts %}
+
+              {{ item.id }}
+              {{ item.title }}
+              <br>
+
+            {% endfor %}
+
+
+
+
+
+          </div>
           <a class="nav-item nav-link" href="{% url 'create' %}"><span class="oi oi-plus"></span></a>
           <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}" onclick="">Logout</a>
           <form id="logout" method="POST" action="{% url 'logout' %}">
@@ -37,6 +59,12 @@
             <input type="hidden" />
           </form>
           {% else %}
+              <div class="search-container">
+            <form action="">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit">Submit<i class="fa fa-search"></i></button>
+            </form>
+          </div>
           <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
           <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
           {% endif %}

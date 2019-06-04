@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import Product
 from django.utils import timezone
+from products.documents import PostDocument
 
 def home(request):
     products = Product.objects
@@ -31,7 +32,7 @@ def create(request):
 
 def detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
-    return render(request, 'products/detail.html',{'product':product})
+    return render(request, 'products/detail.html', {'product':product})
 
 @login_required(login_url="/accounts/signup")
 def upvote(request, product_id):
@@ -40,3 +41,15 @@ def upvote(request, product_id):
         product.votes_total += 1
         product.save()
         return redirect('/products/' + str(product.id))
+
+def search(request):
+    q = request.GET.get('q')
+    print("get method",q)
+    if q:
+        posts = PostDocument.search().query("match", title=q)
+        print(posts)
+
+    else:
+        posts = ''
+
+    return render(request, 'products/search.html', {'posts': posts})
