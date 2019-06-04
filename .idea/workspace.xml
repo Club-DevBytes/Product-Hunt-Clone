@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3a9c0f1b-901d-4278-b95f-67d013e9e2ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/products/documents.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/products/templates/products/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producthunt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/producthunt/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producthunt/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/producthunt/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/producthunt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/producthunt/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -215,6 +208,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -270,12 +264,12 @@
       <option name="presentableId" value="Default" />
       <updated>1559535344848</updated>
       <workItem from="1559535346522" duration="30308000" />
-      <workItem from="1559642360291" duration="11753000" />
+      <workItem from="1559642360291" duration="12256000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42061000" />
+    <option name="totallyTimeSpent" value="42564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,7 +282,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="846" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23876593" />
