@@ -1,13 +1,15 @@
-from django_elasticsearch_dsl import DocType, Index
-from django_elasticsearch_dsl import Index
-from elasticsearch_dsl import Date, Keyword, Text
+from elasticsearch_dsl import Document
+from elasticsearch_dsl import Index
+
 
 from .models import Product
+from elasticsearch_dsl.connections import connections
+connections.create_connection()
 
 posts = Index('posts')
 
-@posts.doc_type
-class PostDocument(DocType):
+@posts.document
+class PostDocument(Document):
 
          
     class Index:
