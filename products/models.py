@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
+from products.documents import PostDocument
 
 class Product(models.Model):
     title = models.CharField(max_length=255, blank=True, null=True)
@@ -14,6 +14,7 @@ class Product(models.Model):
     hunter = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
+
     def __str__(self):
         return self.title
 
@@ -23,3 +24,12 @@ class Product(models.Model):
     def pub_date_pretty(self):
         return self.pub_date.strftime('%b %e %Y')
 
+# # Method for indexing the model
+#     def indexing(self):
+#         obj = PostDocument(
+#             meta={'id': self.id},
+#             title=self.title,
+#             body=self.body
+#         )
+#         # obj.save()
+#         return obj.to_dict(include_meta=True)

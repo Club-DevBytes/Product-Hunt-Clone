@@ -46,7 +46,7 @@ def search(request):
     q = request.GET.get('q')
     print("get method",q)
     if q:
-        posts = PostDocument.search().query("match", body=q)
+        posts = PostDocument.search().query("match", title=q)
         print(posts)
 
     else:
