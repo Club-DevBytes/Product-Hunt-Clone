@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_elasticsearch_dsl',
+    'django_elasticsearch_dsl'
 ]
 
 MIDDLEWARE = [
@@ -77,15 +77,22 @@ WSGI_APPLICATION = 'producthunt.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'producthuntdb',
-        'USER':'postgres',
-        'PASSWORD':'root',
-        'HOST':'localhost',
-        'PORT':'5432',
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME':'producthunt',
+            'USER': 'general',
+            'PASSWORD': '1234',
+            #'HOST': 'multipi.mysql.database.azure.com',
+            # 'PORT':os.environ["RDS_PORT"],
+
+            'OPTIONS': {
+                'charset': 'utf8mb4',
+                'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+                'use_unicode': True,
+            }
+        }
     }
-}
+
 
 
 # Password validation
