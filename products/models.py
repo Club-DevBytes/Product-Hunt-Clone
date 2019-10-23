@@ -1,7 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from products.documents import PostDocument
 
 class Product(models.Model):
     title = models.CharField(max_length=255, blank=True, null=True)
@@ -12,6 +11,9 @@ class Product(models.Model):
     icon = models.ImageField(upload_to='images/')
     votes_total = models.IntegerField(default=1)
     hunter = models.ForeignKey(User, on_delete=models.CASCADE)
+    manufacturer = models.ForeignKey(
+        'Manufacturer', null=True, on_delete=models.SET_NULL
+    )
 
 
 

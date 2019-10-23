@@ -44,12 +44,16 @@ def upvote(request, product_id):
 
 def search(request):
     q = request.GET.get('q')
-    print("get method",q)
-    if q:
-        posts = PostDocument.search().query("match", title=q)
-        print(posts)
 
-    else:
-        posts = ''
+    posts = PostDocument.search().filter("term", category="search").query("match", title=q)
+    response = posts.execute()
+    print("response", response)
+    for hit in response:
+        print(hit)
+        print(
+            "Post name : {}, description {}".format(hit.name, hit.title)
+        )
+
+
 
     return render(request, 'products/search.html', {'posts': posts})
